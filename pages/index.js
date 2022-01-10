@@ -58,9 +58,9 @@ export default function Home({ dataNews, dataNewsPopular, dataAdsPopular }) {
 // tes Fetch Pakai Json Placeholder dengan GetSertverSideProps
 export async function getServerSideProps() {
   try {
-    const resDataNews = await fetch('http://localhost:3001/api/news?limit=5');
-    const resDataNewsPopular = await fetch('http://localhost:3001/api/news/popular?limit=4');
-    const resDataAdsPopular = await fetch('http://localhost:3001/api/ads/popular?limit=4');
+    const resDataNews = await fetch('http://13.229.151.29:3001/api/news?limit=5');
+    const resDataNewsPopular = await fetch('http://13.229.151.29:3001/api/news/popular?limit=4');
+    const resDataAdsPopular = await fetch('http://13.229.151.29:3001/api/ads/popular?limit=4');
 
     const dataNews = await resDataNews.json();
     const dataNewsPopular = await resDataNewsPopular.json();

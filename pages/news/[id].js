@@ -85,7 +85,7 @@ export default News;
 // tes Fetch Pakai Json Placeholder dengan getStaticPaths dan getStaticProps
 export async function getStaticPaths() {
 	try {
-		const resDataNewsId = await fetch(`http://localhost:3001/api/news/all-id`);
+		const resDataNewsId = await fetch(`http://13.229.151.29:3001/api/news/all-id`);
 		const dataNewsId = await resDataNewsId.json();
 
 		const paths = dataNewsId.data.map((val) => ({
@@ -106,10 +106,10 @@ export async function getStaticPaths() {
 export async function getStaticProps(context) {
 	try {
 		const { id } = context.params;
-		const resDetailNews = await fetch(`http://localhost:3001/api/news/${id}`);
-		const resDataNews = await fetch(`http://localhost:3001/api/news?limit=3`);
-		const resDataNewsPopular = await fetch('http://localhost:3001/api/news/popular?limit=4');
-		const resDataAdsPopular = await fetch('http://localhost:3001/api/ads/popular?limit=4');
+		const resDetailNews = await fetch(`http://13.229.151.29:3001/api/news/${id}`);
+		const resDataNews = await fetch(`http://13.229.151.29:3001/api/news?limit=3`);
+		const resDataNewsPopular = await fetch('http://13.229.151.29:3001/api/news/popular?limit=4');
+		const resDataAdsPopular = await fetch('http://13.229.151.29:3001/api/ads/popular?limit=4');
 		const detailNews = await resDetailNews.json();
 		const dataNews = await resDataNews.json();
 		const dataNewsPopular = await resDataNewsPopular.json();

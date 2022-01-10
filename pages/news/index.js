@@ -54,7 +54,7 @@ export default function News({ dataNews }) {
 
 export async function getServerSideProps() {
   try {
-    const resDataNews = await fetch(`http://localhost:3001/api/news?limit=10`);
+    const resDataNews = await fetch(`http://13.229.151.29:3001/api/news?limit=10`);
     const dataNews = await resDataNews.json();
 
     return {
